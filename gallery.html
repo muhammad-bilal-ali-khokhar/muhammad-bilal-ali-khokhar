@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <!--- basic page needs ================================================== -->
+    <meta charset="utf-8" />
+    <title>Muhammad Bilal Ali Khokhar's Images</title>
+    <meta
+      name="description"
+      content="Software Engineer Muhammad Bilal Ali Khokhar, a skilled full stack developer from Gulgust Multan. Explore his work, skills, and contact information. View images of Muhammad Bilal Ali Khokhar's portfolio below." />
+    <meta name="author" content="Muhammad Bilal Ali Khokhar" />
+
+    <!-- mobile specific metas ================================================== -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- metadata tags for ranking ================================================== -->
+    <meta
+      name="keywords"
+      content="Muhammad Bilal Ali Khokhar, Bilal Ali Khokhar, Bilalalikhokhar, M Bilal Ali KK, M Bilal Ali Khokhar, M Bilal Ali KK, Web Developer, MERN Stack, JavaScript, React, Node.js, Express.js, Portfolio" />
+    <meta
+      name="keywords"
+      content="#muhammadbilalalikhokhar #muhammad_bilal_ali_khokhar #m_bilal_ali_kk #mbilalalikk" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- Include images in meta tags -->
+    <meta
+      property="og:image"
+      content="https://scontent.flyp6-1.fna.fbcdn.net/v/t39.30808-6/320890936_493087409587007_238885386230436205_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=zr5unOyi6ssAX-lwhra&_nc_zt=23&_nc_ht=scontent.flyp6-1.fna&oh=00_AfCFWflRC8aFa6SmCpS-lCVpKpkd4GwTnAjVJ53bOq9XwQ&oe=66071A43" />
+    <meta
+      property="og:image"
+      content="https://scontent.flyp6-2.fna.fbcdn.net/v/t1.6435-9/135186986_2886102845001338_8824322588204072711_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a_WBOQz1EYIAX-lOpHq&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC7Q2tp7PAFO84VYPZBNfnBdy4LMrblDqgHOaT60VsBQA&oe=662922C6" />
+    <!-- Add more image links as needed -->
+
+    <!-- Styles -->
+    <style>
+      /* Add your CSS styles for the gallery and modal here */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+        .gallery img {
+          object-fit: cover;
+          max-width: 30%;
+          height: auto;
+          margin: 10px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+      .gallery img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <!-- Images will be rendered dynamically here -->
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <div class="modal-content">
+        <img id="modal-img" src="" alt="#muhammad_bilal_ali_khokhar #mbilalalikk #muhammadbilalalikhokhar #muhammadbilalalikhokhar #image #bilalalikhokhar #bilal #bilalali #bilal" />
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          // Sample array of image links
+          var images = [
+            "https://scontent.flyp6-2.fna.fbcdn.net/v/t1.6435-9/135186986_2886102845001338_8824322588204072711_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a_WBOQz1EYIAX-lOpHq&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC7Q2tp7PAFO84VYPZBNfnBdy4LMrblDqgHOaT60VsBQA&oe=662922C6",
+            "https://scontent.flyp6-1.fna.fbcdn.net/v/t39.30808-6/320890936_493087409587007_238885386230436205_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=zr5unOyi6ssAX-lwhra&_nc_zt=23&_nc_ht=scontent.flyp6-1.fna&oh=00_AfCFWflRC8aFa6SmCpS-lCVpKpkd4GwTnAjVJ53bOq9XwQ&oe=66071A43",
+            "https://scontent.flyp6-2.fna.fbcdn.net/v/t1.6435-9/135186986_2886102845001338_8824322588204072711_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a_WBOQz1EYIAX-lOpHq&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC7Q2tp7PAFO84VYPZBNfnBdy4LMrblDqgHOaT60VsBQA&oe=662922C6",
+            // Add more image links as needed
+          ];
+      
+          // Function to render images randomly
+          function renderImages() {
+            var gallery = $(".gallery");
+            gallery.empty(); // Clear existing images
+      
+            $.each(images, function (index, value) {
+              var img = $("<img>");
+              img.attr("src", value);
+              img.attr("alt", alt="#muhammad_bilal_ali_khokhar #mbilalalikk #muhammadbilalalikhokhar #muhammadbilalalikhokhar #image #bilalalikhokhar #bilal #bilalali #bilal" + (index + 1)); // Set alt tag dynamically
+              gallery.append(img);
+            });
+          }
+      
+          // Function to open modal with clicked image
+          $(".gallery").on("click", "img", function () {
+            var modal = $("#myModal");
+            var modalImg = $("#modal-img");
+            modal.css("display", "block");
+            modalImg.attr("src", $(this).attr("src"));
+          });
+      
+          // Close the modal when the close button is clicked
+          $(".close").click(function () {
+            $("#myModal").css("display", "none");
+          });
+      
+          // Close the modal when clicking outside of it
+          $(window).click(function (event) {
+            if (event.target.id === "myModal") {
+              $("#myModal").css("display", "none");
+            }
+          });
+      
+          // Render images randomly when the page loads
+          renderImages();
+        });
+      </script>
+      
+  </body>
+</html>
