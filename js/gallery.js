@@ -9,7 +9,6 @@ $(document).ready(function () {
       "https://pbs.twimg.com/media/GJNoohDXAAAMqX9?format=jpg&name=large",
       "https://pbs.twimg.com/media/GJkU50kXkAAsBL5?format=jpg&name=large",
       "https://pbs.twimg.com/media/GJkUDSdWoAAI3FE?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkSBF1XIAAXKg-?format=jpg&name=large",
       "https://pbs.twimg.com/media/GJkRcTYWwAAmkR8?format=jpg&name=large",
       "https://pbs.twimg.com/media/GJkPQAqWsAA8t8s?format=jpg&name=large",
       "https://pbs.twimg.com/media/GJkVluwXkAEYpKy?format=jpg&name=medium",
@@ -81,14 +80,19 @@ $(document).ready(function () {
   
     window.addEventListener('load', function() {
       var section = document.getElementById('muhammadbilalalikhokhar-balugallery');
+      var sectionHeading = document.getElementById('section-muhammadbilalalikhokhar-images-gallery');
       section.style.position = 'absolute';
       section.style.width = '0px';
+      sectionHeading.style.display = 'none';
     });
   
     function showGallery(){
       var section = document.getElementById('muhammadbilalalikhokhar-balugallery');
+      var sectionHeading = document.getElementById('section-muhammadbilalalikhokhar-images-gallery');
       section.style.position = 'unset';
       section.style.width = 'unset';
+      sectionHeading.style.display = 'block';
+      
     }
   
   
