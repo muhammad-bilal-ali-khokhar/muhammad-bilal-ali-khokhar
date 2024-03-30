@@ -1,7 +1,6 @@
 $(document).ready(function () {
     // Sample array of image links
     var images = [
-      "https://scontent.flyp6-1.fna.fbcdn.net/v/t39.30808-6/320890936_493087409587007_238885386230436205_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=zr5unOyi6ssAX-lwhra&_nc_zt=23&_nc_ht=scontent.flyp6-1.fna&oh=00_AfCFWflRC8aFa6SmCpS-lCVpKpkd4GwTnAjVJ53bOq9XwQ&oe=66071A43",
       "https://scontent.flyp6-2.fna.fbcdn.net/v/t1.6435-9/135186986_2886102845001338_8824322588204072711_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a_WBOQz1EYIAX-lOpHq&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC7Q2tp7PAFO84VYPZBNfnBdy4LMrblDqgHOaT60VsBQA&oe=662922C6",
       "https://pbs.twimg.com/media/GJkOq1bXMAAKK0P?format=jpg&name=900x900",
       "https://pbs.twimg.com/media/GJkNtu1XYAAE358?format=jpg&name=4096x4096",
@@ -94,7 +93,6 @@ $(document).ready(function () {
       sectionHeading.style.display = 'block';
       
     }
-  
   
   
   
