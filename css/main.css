@@ -2719,3 +2719,28 @@ footer .copyright span:last-child::after {
 	margin-bottom: 0.3rem;
 	letter-spacing: .4rem;
 }
+.moreButton{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0px;
+}	
+.moreButton a{
+    padding: 10px 28px;
+    background: #cc005f;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: .2rem;
+}
+.moreButton a:hover{
+	color: #cc005f;
+	background-color: #fff;
+}
+
+.svgback{
+	width: 40px;
+	height: 40px;
+	background-color: white;
+}

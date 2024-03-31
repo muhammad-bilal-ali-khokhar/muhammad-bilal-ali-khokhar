@@ -1,17 +1,11 @@
 $(document).ready(function () {
     // Sample array of image links
-    var images = [
-      "https://scontent.flyp6-2.fna.fbcdn.net/v/t1.6435-9/135186986_2886102845001338_8824322588204072711_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a_WBOQz1EYIAX-lOpHq&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC7Q2tp7PAFO84VYPZBNfnBdy4LMrblDqgHOaT60VsBQA&oe=662922C6",
-      "https://pbs.twimg.com/media/GJkOq1bXMAAKK0P?format=jpg&name=900x900",
-      "https://pbs.twimg.com/media/GJkNtu1XYAAE358?format=jpg&name=4096x4096",
-      "https://pbs.twimg.com/media/GJbrhg4WYAAchc4?format=jpg&name=4096x4096",
-      "https://pbs.twimg.com/media/GJNoohDXAAAMqX9?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkU50kXkAAsBL5?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkUDSdWoAAI3FE?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkRcTYWwAAmkR8?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkPQAqWsAA8t8s?format=jpg&name=large",
-      "https://pbs.twimg.com/media/GJkVluwXkAEYpKy?format=jpg&name=medium",
-      " https://scontent.flyp6-1.fna.fbcdn.net/v/t1.6435-9/58933375_2354426384835656_1065765300932182016_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGH5s_g2lTe5TKvwHSAQVoM-HqJAvVK8DD4eokC9UrwMAIz0kzx1b6PrJRDYyo2TDIBYJDBbfy9uhsdFl6fOko9&_nc_ohc=iqDXYSjCfCEAX8PfuBH&_nc_ht=scontent.flyp6-1.fna&oh=00_AfCVYo7-QWxHooCnHpPv8M0MkHVko194bazlJ8k57-R1IA&oe=662ED81B",
+
+    const images = window.location.pathname !== '/gallery' ? [
+      "https://scontent.flyp6-2.fna.fbcdn.net/v/t39.30808-6/386256906_3657648397846775_3599934240640614617_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFfxpJwfIMPqFU52fZgBsWyultoPw5BfP-6W2g_DkF8_8AiZ0j37HJ_UkGT4mDGvn_qb6SFOnSFomFDicrMLMDU&_nc_ohc=BfokM4MMdDsAX9XGOOw&_nc_zt=23&_nc_ht=scontent.flyp6-2.fna&oh=00_AfAhPu3h9MFqxfrorF5pHaOfUFs8dsN3PUpm6xSCbN4Uxg&oe=660D4EC4",
+      "https://scontent.flyp6-2.fna.fbcdn.net/v/t39.30808-6/382731868_3650804228531192_1344605443512973626_n.jpg?stp=dst-jpg_s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFkBY4FlxMHeTjcvZtq61gdbqdVeCu0K-Fup1V4K7Qr4WzYYNu66zXySrqgJUz5ohGjdS9QDZ7cBWXsB6xXpfSk&_nc_ohc=LlRFHM8jXiQAX80Y7hN&_nc_zt=23&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC15tzrTQiPZQRYn8SMByK6PyNARIW9vhBz6ulL9BC0uw&oe=660D456C",
+      "https://scontent.flyp6-1.fna.fbcdn.net/v/t39.30808-6/382772088_3650803665197915_4419959474830252154_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFa7fsIOPc1-6ZJXwKoF0BQipWkkWkiMSmKlaSRaSIxKZYh75Qjf2ge5Lxuisc2quTzoqfEUGx0_vT1ZVLWfAxM&_nc_ohc=pIBNJenqj3MAX95a10h&_nc_zt=23&_nc_ht=scontent.flyp6-1.fna&oh=00_AfBjBqzAxw08t5lriLmFXVGQhtVTRuu3yFO-TLuHKzCgzw&oe=660D56EB",
+    ] : [
       "https://scontent.flyp6-2.fna.fbcdn.net/v/t39.30808-6/386256906_3657648397846775_3599934240640614617_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFfxpJwfIMPqFU52fZgBsWyultoPw5BfP-6W2g_DkF8_8AiZ0j37HJ_UkGT4mDGvn_qb6SFOnSFomFDicrMLMDU&_nc_ohc=BfokM4MMdDsAX9XGOOw&_nc_zt=23&_nc_ht=scontent.flyp6-2.fna&oh=00_AfAhPu3h9MFqxfrorF5pHaOfUFs8dsN3PUpm6xSCbN4Uxg&oe=660D4EC4",
       "https://scontent.flyp6-2.fna.fbcdn.net/v/t39.30808-6/382731868_3650804228531192_1344605443512973626_n.jpg?stp=dst-jpg_s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFkBY4FlxMHeTjcvZtq61gdbqdVeCu0K-Fup1V4K7Qr4WzYYNu66zXySrqgJUz5ohGjdS9QDZ7cBWXsB6xXpfSk&_nc_ohc=LlRFHM8jXiQAX80Y7hN&_nc_zt=23&_nc_ht=scontent.flyp6-2.fna&oh=00_AfC15tzrTQiPZQRYn8SMByK6PyNARIW9vhBz6ulL9BC0uw&oe=660D456C",
       "https://scontent.flyp6-1.fna.fbcdn.net/v/t39.30808-6/382772088_3650803665197915_4419959474830252154_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFa7fsIOPc1-6ZJXwKoF0BQipWkkWkiMSmKlaSRaSIxKZYh75Qjf2ge5Lxuisc2quTzoqfEUGx0_vT1ZVLWfAxM&_nc_ohc=pIBNJenqj3MAX95a10h&_nc_zt=23&_nc_ht=scontent.flyp6-1.fna&oh=00_AfBjBqzAxw08t5lriLmFXVGQhtVTRuu3yFO-TLuHKzCgzw&oe=660D56EB",
@@ -80,9 +74,11 @@ $(document).ready(function () {
     window.addEventListener('load', function() {
       var section = document.getElementById('muhammadbilalalikhokhar-balugallery');
       var sectionHeading = document.getElementById('section-muhammadbilalalikhokhar-images-gallery');
-      section.style.position = 'absolute';
-      section.style.width = '0px';
-      sectionHeading.style.display = 'none';
+      if (window.location.pathname !== '/gallery') {
+        section.style.position = 'absolute';
+        section.style.width = '0px';
+        sectionHeading.style.display = 'none'; 
+      }
     });
   
     function showGallery(){
